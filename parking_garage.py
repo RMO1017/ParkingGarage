@@ -28,18 +28,18 @@ class ParkingGarage():
         self.tickets -= 1
         print(f'There are {self.tickets} tickets left')
 
-    def payForParking(self): 
-        payment = ""
+    def payForParking(self, current_Ticket): 
+        self.current_Ticket = current_Ticket
         if payment == None:
             payment = input('Please input your payment')
         if payment != None:
-            currentTicket = [Paid, True]
+            self.currentTicket = ["Paid", True]
             print('Your ticket has been paid. You have 15 minutes to leave the garage.')
     
     def leaveGarage(self):
-        if currentTicket != True:
+        if self.currentTicket != True:
             print('Sorry, your ticket has not been paid')
             leaveGarage.payForParking()
             print('Thank you, have a nice day!')
-        elif currentTicket == True:
+        elif self.currentTicket == True:
             print('Thank you, have a nice day!')
